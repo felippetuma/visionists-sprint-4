@@ -133,7 +133,7 @@ const Cadastro = () => {
             Já tem uma conta?{" "}
             <Link
               to="/login"
-              className="text-[#985eff] hover:underline font-medium cursor-pointer transition-all"
+              className="text-principal hover:underline font-medium cursor-pointer transition-all"
             >
               Faça login
             </Link>
