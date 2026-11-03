@@ -3,6 +3,9 @@ import NavBar from "./components/NavBar"
 import Home from "./pages/Home"
 import Projeto from "./pages/Projeto"
 import Sobre from "./pages/Sobre"
+import Login from "./pages/Login"
+import Error from "./pages/Error"
+import Dashboard from "./pages/Dashboard"
 
 const App = () => {
   return (
@@ -13,6 +16,9 @@ const App = () => {
             <Route path="/" element={<Home/>}/>
             <Route path="/projeto" element={<Projeto/>}/>
             <Route path="/sobrenos" element={<Sobre/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/dashboard" element={<Dashboard/>}/>
+            <Route path="/*" element={<Error/>}/>
           </Routes>
       </div>
     </Router>
