@@ -75,9 +75,11 @@ Você também pode criar uma conta em `/cadastro`. A senha precisa ter pelo meno
 
 | Rota | Arquivo | Conteúdo |
 |---|---|---|
-| `/` | `src/pages/Home.tsx` | Página inicial e seção "Descubra" |
-| `/projeto` | `src/pages/Projeto.tsx` | Sobre o projeto |
+| `/` | `src/pages/Home.tsx` | Página inicial. A seção "Descubra" liga às quatro páginas institucionais (sobre nós, projeto e as duas histórias) |
+| `/projeto` | `src/pages/Projeto.tsx` | Apresentação do projeto, com imagens dos modos do app |
 | `/sobrenos` | `src/pages/Sobre.tsx` | Equipe, com seletor de integrantes |
+| `/histjovi` | `src/pages/HistJovi.tsx` | Trajetória e marcos da Jovi |
+| `/histvisionists` | `src/pages/HistVisionists.tsx` | Como a equipe Visionists começou |
 | `/login` | `src/pages/Login.tsx` | Login |
 | `/cadastro` | `src/pages/Cadastro.tsx` | Cadastro, que já entra na conta ao terminar |
 | `/dashboard` | `src/pages/Dashboard.tsx` | Área logada, com o menu da conta |
@@ -128,9 +130,11 @@ api/main.py         API FastAPI
 requirements.txt    Dependências Python
 src/
   App.tsx           Rotas
-  pages/            Uma página por rota
+  pages/            Uma página por rota (Home, Projeto, Sobre, HistJovi, HistVisionists, Login, Cadastro, Dashboard e Error)
   components/       NavBar, SelectTheme e Descubra
-  assets/           Imagens e logo
+  assets/           Logo e imagens usadas nas páginas
+    imgs/           Imagens novas dos modos do app (ainda não usadas no código)
+    slidesImgs/     Fotos de cachorros (ainda não usadas no código)
   index.css         Tailwind e cores do tema
 ```
 
