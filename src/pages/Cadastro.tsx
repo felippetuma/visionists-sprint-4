@@ -1,7 +1,5 @@
-import React, { useState, type FormEvent } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-
-const API_URL = "http://localhost:8000/api";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Cadastro = () => {
   const navigate = useNavigate();
