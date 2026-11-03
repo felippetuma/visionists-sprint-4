@@ -4,7 +4,9 @@ import Home from "./pages/Home"
 import Projeto from "./pages/Projeto"
 import Sobre from "./pages/Sobre"
 import Login from "./pages/Login"
-import Cadastro from "./pages/Cadastro" // Importação da nova página
+import Cadastro from "./pages/Cadastro" 
+import HistJovi from "./pages/HistJovi"
+import HistVisionists from "./pages/HistVisionists" // 1. Adicione a importação aqui
 import Error from "./pages/Error"
 import Dashboard from "./pages/Dashboard"
 
@@ -19,6 +21,8 @@ const App = () => {
             <Route path="/sobrenos" element={<Sobre/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/cadastro" element={<Cadastro/>}/> 
+            <Route path="/histjovi" element={<HistJovi/>}/>
+            <Route path="/histvisionists" element={<HistVisionists/>}/> {/* 2. Adicione a rota aqui */}
             <Route path="/dashboard" element={<Dashboard/>}/>
             <Route path="/*" element={<Error/>}/>
           </Routes>
