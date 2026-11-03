@@ -1,6 +1,7 @@
 
 import { ArrowDownIcon } from "lucide-react";
 import smartphoneJovi from "../assets/smartphoneJovi.svg";
+import Descubra from "../components/Descubra";
 
 const Home = () => {
   return (
@@ -14,9 +15,10 @@ const Home = () => {
             <img src={smartphoneJovi} alt="celular X300 Plus Jovi" className="w-[833px] h-[1030px]" />
             </div>
       </header>
-      <div className="flex justify-center items-center -mt-37 animate-pulse text-black dark:text-white">
+      <div className="flex justify-center items-center -mt-1 animate-pulse text-black dark:text-white">
           <ArrowDownIcon size={35}/>
       </div>
+      <Descubra/>
     </main>
   )
 }
