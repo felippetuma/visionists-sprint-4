@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Descubra = () => {
@@ -36,8 +36,8 @@ const Descubra = () => {
   ];
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-6 mt-40 select-none">
-      <h2 className="text-[54px] font-light tracking-tight mb-14 uppercase opacity-90">
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 mt-20 md:mt-40 select-none">
+      <h2 className="text-4xl sm:text-5xl md:text-[54px] font-light tracking-tight mb-8 md:mb-14 uppercase opacity-90">
         Descubra
       </h2>
 
@@ -54,22 +54,21 @@ const Descubra = () => {
               <div
                 onMouseEnter={() => definirItemFocado(index)}
                 onMouseLeave={() => definirItemFocado(null)}
-                className="border-b border-white/10 cursor-pointer overflow-hidden flex flex-col justify-center transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]"
-                style={{ height: oItemEstaAtivo ? "220px" : "110px" }}
+                className="border-b border-black/10 dark:border-white/10 cursor-pointer"
               >
-                <div className="flex items-center gap-8 py-6 transition-all duration-300">
+                <div className="flex items-center gap-4 sm:gap-8 py-4 md:py-6 transition-all duration-300">
                   <span
-                    className={`text-3xl md:text-4xl font-extrabold tracking-wider transition-all duration-300 ${
+                    className={`text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider transition-all duration-300 ${
                       oItemEstaAtivo
-                        ? "text-white translate-x-1"
-                        : "text-white/30"
+                        ? "text-principal translate-x-1"
+                        : "text-black/30 dark:text-white/30"
                     }`}
                   >
                     {item.numero}
                   </span>
                   <span
-                    className={`text-3xl md:text-4xl font-bold tracking-tight transition-all duration-300 ${
-                      oItemEstaAtivo ? "text-white translate-x-2" : "text-white/70"
+                    className={`text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight transition-all duration-300 ${
+                      oItemEstaAtivo ? "text-black dark:text-white translate-x-2" : "text-black/70 dark:text-white/70"
                     }`}
                   >
                     {item.titulo}
@@ -77,13 +76,20 @@ const Descubra = () => {
                 </div>
 
                 <div
-                  className={`transition-all duration-500 ease-out pl-16 text-white/50 max-w-2xl text-base leading-relaxed  ${
-                    oItemEstaAtivo
-                      ? "opacity-100 translate-y-0 pb-8"
-                      : "opacity-0 -translate-y-4 pointer-events-none pb-0"
+                  className={`grid transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                    oItemEstaAtivo ? "grid-rows-[1fr] visible" : "grid-rows-[0fr] invisible"
                   }`}
+                  aria-hidden={!oItemEstaAtivo}
                 >
-                  <p>{item.conteudo}</p>
+                  <div className="overflow-hidden">
+                    <p
+                      className={`pl-12 sm:pl-16 pb-4 md:pb-6 text-black/50 dark:text-white/50 max-w-2xl text-sm sm:text-base leading-relaxed transition-all duration-500 ease-out ${
+                        oItemEstaAtivo ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+                      }`}
+                    >
+                      {item.conteudo}
+                    </p>
+                  </div>
                 </div>
               </div>
             </Link>
