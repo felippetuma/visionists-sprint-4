@@ -23,7 +23,7 @@ const membros = [
   {
     nome: "Felipe Motta",
     iniciais: "FM",
-    rm: "",
+    rm: "570550",
     cargo: "Desenvolvedor",
     descricao: "Integrante da equipe Visionists",
     linkedin: "https://www.linkedin.com/in/felipe-motta-8967933b4/",
@@ -32,7 +32,7 @@ const membros = [
   {
     nome: "Renan Silva",
     iniciais: "RS",
-    rm: "",
+    rm: "569549",
     cargo: "Desenvolvedor",
     descricao: "Integrante da equipe Visionists",
     linkedin: "https://www.linkedin.com/in/renansilvaa/",
@@ -41,7 +41,7 @@ const membros = [
   {
     nome: "Yan da Silva",
     iniciais: "YS",
-    rm: "",
+    rm: "572373",
     cargo: "Desenvolvedor",
     descricao: "Integrante da equipe Visionists",
     linkedin: "https://www.linkedin.com/in/yan-silva-609803371/",
@@ -69,7 +69,7 @@ const Sobre = () => {
             onClick={() => setMembroSelecionado(index)}
             className={`text-left p-4 rounded-2xl transition-all duration-300 hover:-translate-y-1
               ${membroSelecionado === index
-                ? "bg-principal text-white shadow-lg shadow-principal/30"
+                ? "bg-principal transition-colors duration-300 text-white shadow-lg shadow-principal/30"
                 : "bg-zinc-400 text-zinc-900 dark:bg-zinc-800 dark:text-white hover:bg-zinc-300 dark:hover:bg-zinc-600"
               }`}
           >
