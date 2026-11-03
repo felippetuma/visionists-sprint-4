@@ -11,8 +11,10 @@
 }
 
 @layer base {
-
   html {
     @apply font-work-sans;
+  }
+  body {
+    @apply bg-white dark:bg-zinc-900;
   }
 }

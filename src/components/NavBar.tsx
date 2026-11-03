@@ -11,7 +11,7 @@ const NavBar = () => {
             <div className="flex gap-20 text-base font-light">
                 <Link to="/" className="hover:text-principal hover:font-normal">Início</Link>
                 <Link to="/projeto" className="hover:text-principal hover:font-normal">Projeto</Link>
-                <Link to="/sobrenos" className="hover:text-principal hover:font-normal"> Sobre Nós</Link>
+                <Link to="/sobrenos" className="hover:text-principal hover:font-normal">Sobre Nós</Link>
             </div>
             <div className="absolute right-5">
                 <SelectTheme />
