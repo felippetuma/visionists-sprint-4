@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <main className="flex-1">
       <header className="flex top-0 justify-between items-center w-full -mt-50">
-          <div className="flex flex-col items-center p-5">
+          <div className="flex flex-col items-center px-8">
             <h1 className="text-[130px] font-bold whitespace-nowrap leading-none">Cam <span className="text-jovi">Sense</span></h1>
             <p className="text-[17px] ">Porque a melhor foto é sempre aquela que você consegue tirar sem dificuldades.</p>
           </div>
