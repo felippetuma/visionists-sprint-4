@@ -7,7 +7,7 @@ import Sobre from "./pages/Sobre"
 const App = () => {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen text-black bg-white dark:text-white dark:bg-zinc-900">
         <NavBar/>
           <Routes>
             <Route path="/" element={<Home/>}/>
