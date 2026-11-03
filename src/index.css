@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -8,6 +9,7 @@
     --color-jovi: #0000ee;
     --color-principal: #5364D4;
     --font-work-sans: "Work Sans", sans-serif;
+    --font-eb:"Eb Garamond" , serif; 
 }
 
 @layer base {
