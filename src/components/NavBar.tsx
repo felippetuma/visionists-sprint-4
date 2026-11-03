@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.svg"
 import SelectTheme from "./SelectTheme";
-import { LogIn, Menu } from "lucide-react";
+import { LayoutDashboard, LogIn, Menu } from "lucide-react";
 import { useState } from "react";
 
 const NavBar = () => {
     const [open, setOpen] = useState(false);
+
+    useLocation();
+    const logado = !!localStorage.getItem("login");
 
     return (
         <nav className="relative m-3 md:m-5 max-w-full">
@@ -17,7 +20,9 @@ const NavBar = () => {
                     <Link to="/" className="hover:text-principal hover:font-normal">Início</Link>
                     <Link to="/projeto" className="hover:text-principal hover:font-normal">Projeto</Link>
                     <Link to="/sobrenos" className="hover:text-principal hover:font-normal">Sobre Nós</Link>
-                    <Link to="/login" className="inline-flex items-center gap-2 border-2 rounded-full px-4 border-principal hover:text-principal hover:font-normal"><LogIn size={15} /> Login</Link>
+                    {logado
+                        ? <Link to="/dashboard" className="inline-flex items-center gap-2 border-2 rounded-full px-4 border-principal hover:text-principal hover:font-normal"><LayoutDashboard size={15} /> Dashboard</Link>
+                        : <Link to="/login" className="inline-flex items-center gap-2 border-2 rounded-full px-4 border-principal hover:text-principal hover:font-normal"><LogIn size={15} /> Login</Link>}
                 </div>
                 <div className="flex items-center gap-3 md:absolute md:right-5">
                     <SelectTheme />
@@ -31,7 +36,9 @@ const NavBar = () => {
                     <Link to="/" className="hover:text-principal hover:font-normal">Início</Link>
                     <Link to="/projeto" className="hover:text-principal hover:font-normal">Projeto</Link>
                     <Link to="/sobrenos" className="hover:text-principal hover:font-normal">Sobre Nós</Link>
-                    <Link to="/login" className="inline-flex items-center gap-2 border-2 rounded-full px-4 mt-3 border-principal hover:text-principal hover:font-normal"><LogIn size={15} /> Login</Link>
+                    {logado
+                        ? <Link to="/dashboard" onClick={() => setOpen(false)} className="inline-flex items-center gap-2 border-2 rounded-full px-4 mt-3 border-principal hover:text-principal hover:font-normal"><LayoutDashboard size={15} /> Dashboard</Link>
+                        : <Link to="/login" onClick={() => setOpen(false)} className="inline-flex items-center gap-2 border-2 rounded-full px-4 mt-3 border-principal hover:text-principal hover:font-normal"><LogIn size={15} /> Login</Link>}
                 </div>
             )}
         </nav>
