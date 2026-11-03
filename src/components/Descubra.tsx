@@ -36,7 +36,7 @@ const Descubra = () => {
   ];
 
   return (
-    // Adicionado 'mb-32 md:mb-60' para criar o espaço maior no fundo da página
+   
     <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 mt-20 md:mt-40 mb-32 md:mb-60 select-none">
       <h2 className="text-4xl sm:text-5xl md:text-[54px] font-light tracking-tight mb-8 md:mb-14 uppercase opacity-90">
         Descubra
