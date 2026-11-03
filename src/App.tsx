@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import Projeto from "./pages/Projeto"
 import Sobre from "./pages/Sobre"
 import Login from "./pages/Login"
+import Cadastro from "./pages/Cadastro" // Importação da nova página
 import Error from "./pages/Error"
 import Dashboard from "./pages/Dashboard"
 
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/projeto" element={<Projeto/>}/>
             <Route path="/sobrenos" element={<Sobre/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/cadastro" element={<Cadastro/>}/> 
             <Route path="/dashboard" element={<Dashboard/>}/>
             <Route path="/*" element={<Error/>}/>
           </Routes>
