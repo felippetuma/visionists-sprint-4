@@ -47,7 +47,6 @@ const Dashboard = () => {
     const [slideAtual, setSlideAtual] = useState(0);
     const [chatAberto, setChatAberto] = useState(false);
 
-    // troca de slide sozinho; ao clicar numa bolinha o intervalo reinicia (slideAtual está nas dependências)
     useEffect(() => {
         const intervalo = setInterval(() => {
             setSlideAtual((atual) => (atual + 1) % slidesPet.length);

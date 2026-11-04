@@ -32,7 +32,6 @@ const Conversa = ({ aoFechar }: { aoFechar: () => void }) => {
     const [jogo, setJogo] = useState<Jogo | null>(null);
     const [entrada, setEntrada] = useState("");
 
-    // estado de cada jogo
     const [numeroSorteado, setNumeroSorteado] = useState(0);
     const [tentativas, setTentativas] = useState(0);
     const [questao, setQuestao] = useState<QuestaoTabuada | null>(null);
@@ -49,7 +48,6 @@ const Conversa = ({ aoFechar }: { aoFechar: () => void }) => {
         return () => document.removeEventListener("keydown", aoApertarEsc);
     }, [aoFechar]);
 
-    // rola para a última mensagem
     useEffect(() => {
         fimRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
     }, [mensagens]);
