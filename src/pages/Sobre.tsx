@@ -80,7 +80,6 @@ const Sobre = () => {
 
       </div>
 
-      {/* Card de perfil selecionado */}
       <div className="md:col-span-2 dark:bg-zinc-700 bg-zinc-300 p-4 text-center rounded-2xl flex items-center justify-center flex-col shadow-lg transition-all duration-300">
 
         <div className="flex mt-4 size-15 items-center justify-center rounded-full text-white bg-principal text-2xl font-semibold shadow-md shadow-principal">
