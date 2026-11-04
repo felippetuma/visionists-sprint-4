@@ -143,6 +143,16 @@ src/
 - Os dados da API ficam na memória e se perdem a cada reinício.
 - `Login.tsx` e `Cadastro.tsx` chamam `http://localhost:8000` direto. Na Vercel essas chamadas não alcançam a API, e o endereço precisa virar um caminho relativo (`/api/...`) ou uma variável de ambiente.
 
+## Uso de IA
+
+Usamos o Claude Code, assistente de IA da Anthropic, em quatro frentes: na correção de bugs (erros de build, avisos do lint e problemas apontados na revisão do código), no processo criativo de algumas páginas, na escrita e atualização deste README, e na transcrição do joviHelp da sprint 3.
+
+A equipe definiu o que o site faria, escreveu as funcionalidades e revisou cada sugestão da IA antes de aceitá-la.
+
 ## Equipe
 
-Davi Toyota, Felippe Tuma (Tech Lead), Felipe Motta, Renan Silva e Yan da Silva.
+- Davi Yuu Santos Toyota RM.: 569557
+- Felipe Santana Motta RM.: 570550
+- Felippe Tuma Costa RM.: 569459
+- Renan Martins da Silva RM.: 569549
+- Yan da Silva Lima RM.: 572373
