@@ -1,6 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { ChevronDown, LogOut } from "lucide-react";
+import modopet from "../assets/imgs/modo-pet.png";
+import dachshund from "../assets/slidesImgs/dachshund.jpg";
+import pug from "../assets/slidesImgs/pug.jpg";
+import modoDocs from "../assets/imgs/modo-docs.png";
+import BuscarCep from "../components/BuscarCep";
+import ChatBot from "../components/ChatBot";
+import joviHelp from "../assets/joviHelp.png";
+
+const slidesPet = [
+    { src: dachshund, alt: "Cachorro dachshund" },
+    { src: pug, alt: "Cachorro pug" },
+    { src: modopet, alt: "Modo pet" },
+];
 
 interface Cliente {
     id: number;
@@ -31,6 +44,16 @@ const Dashboard = () => {
     const [client] = useState<Cliente | null>(ClienteLogado);
     const [menuAberto, setMenuAberto] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
+    const [slideAtual, setSlideAtual] = useState(0);
+    const [chatAberto, setChatAberto] = useState(false);
+
+    // troca de slide sozinho; ao clicar numa bolinha o intervalo reinicia (slideAtual está nas dependências)
+    useEffect(() => {
+        const intervalo = setInterval(() => {
+            setSlideAtual((atual) => (atual + 1) % slidesPet.length);
+        }, 3000);
+        return () => clearInterval(intervalo);
+    }, [slideAtual]);
 
     useEffect(() => {
         const aoClicarFora = (e: MouseEvent) => {
@@ -58,8 +81,8 @@ const Dashboard = () => {
 
     return (
         <div className="min-h-screen">
-            <header className="flex items-center justify-between px-6 py-4 shadow">
-                <h1 className="text-xl font-bold">Dashboard</h1>
+            <header className="flex items-center justify-between px-4 sm:px-6 py-4 shadow">
+                <h1 className="text-lg sm:text-xl font-bold">Dashboard</h1>
                 <div ref={menuRef} className="relative">
                     <button
                         type="button"
@@ -97,13 +120,65 @@ const Dashboard = () => {
                 </div>
             </header>
 
-            <main className="p-6">
-                <div className="rounded-xl bg-zinc-300 dark:bg-zinc-700 p-6 shadow">
+            <main className="flex flex-col gap-4 p-4 sm:p-6">
+                <div className="rounded-xl bg-zinc-300 dark:bg-zinc-700 p-4 sm:p-6 shadow">
                     <h2 className="text-lg font-semibold ">
                         Olá, {client.nome}!
                     </h2>
                 </div>
+                <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center">
+
+                    <div className="p-4 flex flex-col items-center gap-4">
+                        <p className="bg-green-300 flex text-center rounded-md px-3 py-2 text-sm text-green-600">
+                            Pet Detectado, Deseja Ativar o <span className="px-1 text-yellow-500">modo pet</span>?
+                        </p>
+                        <img
+                            key={slideAtual}
+                            src={slidesPet[slideAtual].src}
+                            alt={slidesPet[slideAtual].alt}
+                            className="block w-full max-w-80 aspect-4/3 object-cover rounded-3xl"
+                        />
+                        <div className="flex gap-2">
+                            {slidesPet.map((slide, i) => (
+                                <button
+                                    key={slide.alt}
+                                    type="button"
+                                    aria-label={`Ir para o slide ${i + 1}`}
+                                    aria-current={i === slideAtual}
+                                    onClick={() => setSlideAtual(i)}
+                                    className={`size-3 rounded-full cursor-pointer transition-colors ${i === slideAtual ? "bg-principal" : "bg-zinc-400 dark:bg-zinc-600"}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                    <div className="p-4 flex flex-col items-center gap-4">
+                        <button
+                            type="button"
+                            disabled
+                            className="w-full max-w-80 hover:opacity-90 cursor-pointer disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:opacity-50 hover:-translate-y-2 disabled:active:scale-100">
+                            <img src={modoDocs} alt="previa modo documento" className="block w-full max-w-80 aspect-4/3 object-cover rounded-3xl" />
+                        </button>
+                        <p className="bg-red-300 flex text-center rounded-lg px-3 py-2 text-sm text-red-600">
+                            Nenhum documento encontrado
+                        </p>
+                    </div>
+                    <div className="p-4 flex flex-col items-center gap-4">
+                        <button
+                            type="button"
+                            onClick={() => setChatAberto(true)}
+                            aria-label="Abrir o JOVI Chatbot"
+                            className="w-full max-w-80 cursor-pointer transition-transform hover:-translate-y-2"
+                        >
+                            <img src={joviHelp} alt="JOVI Chatbot" className="block w-full max-w-80 aspect-4/3 object-cover rounded-3xl" />
+                        </button>
+                        <p className="bg-green-300 flex text-center rounded-lg px-3 py-2 text-sm text-green-600">
+                            Converse com o chatbot e jogue
+                        </p>
+                    </div>
+                </div>
+                <BuscarCep/>
             </main>
+            <ChatBot aberto={chatAberto} aoFechar={() => setChatAberto(false)} />
         </div>
     )
 }
