@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import modoNoturnoImg from "../assets/Modo Noturno.png";
 import imagemPetImg from "../assets/imagemPet.png";
 import modoDocumentoImg from "../assets/Modo documento.png";
-import joviHelp from "../assets/joviHelp.png";
+import joviHelp from "../assets/jovihelp.png";
+
 
 const Projeto = () => {
   const funcionalidades = [
