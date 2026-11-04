@@ -60,7 +60,7 @@ const HistVisionists = () => {
       </Link>
 
       <div className="flex flex-col items-center text-center px-4 mb-24">
-        <h1 className="text-[10vw] sm:text-[min(11vw,6rem)] lg:text-[min(6vw,90px)] font-bold whitespace-nowrap leading-none uppercase">
+        <h1 className="text-4xl sm:text-6xl lg:text-[min(6vw,90px)] font-bold leading-tight lg:leading-none text-balance uppercase">
           A Trajetória do <span className="text-principal">CamSense</span>
         </h1>
         <p className="text-sm sm:text-[17px] mt-4 max-w-2xl leading-relaxed opacity-80">

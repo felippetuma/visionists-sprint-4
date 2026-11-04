@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import modoNoturnoImg from "../assets/Modo Noturno.png";
 import imagemPetImg from "../assets/imagemPet.png";
 import modoDocumentoImg from "../assets/Modo documento.png";
-import chatBotImg from "../assets/ChatBot.png";
+import joviHelp from "../assets/joviHelp.png";
 
 const Projeto = () => {
   const funcionalidades = [
@@ -32,7 +32,7 @@ const Projeto = () => {
       titulo: "Assistente Conversacional JoviHelp",
       descricao:
         "Um hub inteligente em formato de chatbot integrado à interface fotográfica para auxiliar os utilizadores a explorar recursos sem poluir a tela principal.",
-      img: chatBotImg,
+      img: joviHelp,
       alt: "Interface do ChatBot integrado JoviHelp",
     },
   ];
@@ -50,8 +50,8 @@ const Projeto = () => {
         Voltar para o início
       </Link>
 
-      <div className="flex flex-col items-center text-center px-4 mb-24">
-        <h1 className="text-[10vw] sm:text-[min(11vw,6rem)] lg:text-[min(6vw,90px)] font-bold whitespace-nowrap leading-none uppercase">
+      <div className="flex flex-col items-center text-center px-4 mb-12 md:mb-24">
+        <h1 className="text-4xl sm:text-6xl lg:text-[min(6vw,90px)] font-bold leading-tight lg:leading-none text-balance uppercase">
           O Projeto <span className="text-principal">CamSense</span>
         </h1>
         <p className="text-sm sm:text-[17px] mt-4 max-w-2xl font-light leading-relaxed opacity-80">
@@ -61,7 +61,7 @@ const Projeto = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-28 p-8 bg-zinc-100/40 dark:bg-zinc-800/30 rounded-3xl border border-zinc-200/50 dark:border-zinc-800/50">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-28 p-5 sm:p-8 bg-zinc-100/40 dark:bg-zinc-800/30 rounded-3xl border border-zinc-200/50 dark:border-zinc-800/50">
         <div className="space-y-4">
           <span className="text-xs font-medium tracking-widest text-principal uppercase block">
             Abordagem Técnica
