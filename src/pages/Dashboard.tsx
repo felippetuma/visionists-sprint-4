@@ -7,7 +7,7 @@ import pug from "../assets/slidesImgs/pug.jpg";
 import modoDocs from "../assets/imgs/modo-docs.png";
 import BuscarCep from "../components/BuscarCep";
 import ChatBot from "../components/ChatBot";
-import joviHelp from "../assets/joviHelp.png";
+import joviHelp from "../assets/jovihelp.png";
 
 const slidesPet = [
     { src: dachshund, alt: "Cachorro dachshund" },
